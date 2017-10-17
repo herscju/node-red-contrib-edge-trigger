@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    RED.nodes.registerType('falling-edge', {
+        category: 'function',
+        color: '#E2D96E',
+        defaults: {
+            name: {value: ""},
+            threshold: {
+                value: "",
+                required: true,
+                validate: RED.validators.number()
+            }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "falling-edge.png",
+        label: function() {
+            return this.name || "falling edge";
+        },
+        paletteLabel: "falling edge"
+    });
+</script>
+
+<script type="text/x-red" data-template-name="falling-edge">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-threshold"><i class="icon-chevron-down"></i> Threshold</label>
+        <input type="text" id="node-input-threshold" placeholder="value">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="falling-edge">
+    <p>A node that forwards its incoming message only if the numeric value of the
+    message payload drops below a specified threshold.</p>
+</script>
