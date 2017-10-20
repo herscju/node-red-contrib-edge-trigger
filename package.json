@@ -3,7 +3,7 @@
     "version": "0.1.2",
     "author": "Paul Cunnane <paul.cunnane@gmail.com>",
     "description": "A set of nodes to trigger on rising or falling values",
-    "repository": "bitbucket:oscarBravo/node-red-contrib-edge-trigger",
+    "repository": "eschava/node-red-contrib-edge-trigger",
     "keywords": ["node-red"],
     "node-red": {
         "nodes": {
