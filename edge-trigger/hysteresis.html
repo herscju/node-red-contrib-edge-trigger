@@ -13,7 +13,8 @@
                 value: "",
                 required: true,
                 validate: RED.validators.number()
-            }
+            },
+            initial_edge: {value: ""},
         },
         inputs: 1,
         outputs: 1,
@@ -36,6 +37,15 @@
     <div class="form-row">
         <label for="node-input-falling_threshold"><i class="icon-chevron-down"></i> Falling threshold</label>
         <input type="text" id="node-input-falling_threshold" placeholder="value">
+    </div>
+    <div class="form-row">
+        <label for="node-input-initial_edge">Initial message if threshold reached</label>
+            <select id="node-input-initial_edge">
+            <option value="">None</option>
+            <option value="rising">Rising</option>
+            <option value="falling">Falling</option>
+            <option value="any">Any</option>
+        </select>
     </div>
 </script>
 

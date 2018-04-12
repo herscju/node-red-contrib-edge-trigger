@@ -25,6 +25,15 @@ module.exports = function(RED) {
                                 node.send(msg);
                                 node.last_edge = 'falling';
                         }
+                    } else { // first value
+                        if ((config.initial_edge == 'any' || config.initial_edge == 'rising') && this_value > config.rising_threshold) {
+                            msg.edge = 'rising';
+                            node.send(msg);
+                            node.last_edge = 'rising';
+                        } else if ((config.initial_edge == 'any' || config.initial_edge == 'falling') && this_value < config.falling_threshold) {
+                            msg.edge = 'falling';
+                            node.send(msg);
+                            node.last_edge = 'falling';
                     }
                     node.last_value = this_value;
                 }
