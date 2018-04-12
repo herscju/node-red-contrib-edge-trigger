@@ -34,6 +34,7 @@ module.exports = function(RED) {
                             msg.edge = 'falling';
                             node.send(msg);
                             node.last_edge = 'falling';
+                        }
                     }
                     node.last_value = this_value;
                 }
