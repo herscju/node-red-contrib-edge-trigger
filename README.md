@@ -60,7 +60,7 @@ Given a threshold value, the node `falling edge` will forward its incoming `msg`
 
 
 #### Hysteresis
-The node `hysteresis`combines the functions of the `falling edge` and `rising edge` nodes. It has both rising and falling thresholds, and forwards the incoming `msg` if its numerical value of its `msg.payload` crosses either threshold in the appropriate direction. The outgoing message has its `edge` property set to `rising` or `falling`.
+The node `hysteresis`combines the functions of the `falling edge` and `rising edge` nodes. It has both rising and falling thresholds, and forwards the incoming `msg` if its numerical value of its `msg.payload` crosses either threshold in the appropriate direction. The outgoing message has its `edge` property set to `rising` or `falling` (see [example 2](#hysteresis_example2) below for the edge property).  
 The difference between the two threshold values is called *hysteresis band*.  
 
 <img src="assets/hysteresis-trigger.png" title="Hysteresis" width="650" />
@@ -74,8 +74,8 @@ The `hysteresis` node is useful in situations where it would not be desirable to
 <a name="examples"></a>
 ## Examples
 
-<a name="rising_falling_example"></a>
-### Example of the rising and falling edge nodes
+<a name="rising_falling_example1"></a>
+### Example 1: Rising and falling edge nodes
 
 This example shows the behaviour of the `rising edge`and `falling edge` nodes. You can click on the inject nodes to see which values are forwarded and displayed at the debug nodes crossing the different threshold levels.  
 <img src="assets/flow-rising-falling.png" title="Rising edge and falling edge example" width="600" />
@@ -89,8 +89,8 @@ This example shows the behaviour of the `rising edge`and `falling edge` nodes. Y
 **Fig. 7:** `rising edge` and `falling edge` example flow
 
 
-<a name="hysteresis_example"></a>
-### Example of the hysteresis node
+<a name="hysteresis_example2"></a>
+### Example 2: Hysteresis node
 
 This example shows the behaviour of the `hysteresis` node. 
 The example flow looks like this:  
@@ -98,7 +98,7 @@ The example flow looks like this:
 
 **Fig. 8:** `hysteresis` node example 
 
-
+#### Example 2 node configuration 
 The two hysteresis values are 6371 and 40074. The node configuration is shown in the following figure.  
 <img src="assets/hysteresis-example-node-configuration.png" title="Hysteresis example node configuration" width="300" />
 
@@ -108,3 +108,11 @@ The two hysteresis values are 6371 and 40074. The node configuration is shown in
 ```json
 [{"id":"5845ed17.5d48cc","type":"hysteresis","z":"38d130a0.78811","name":"hysteresis, 6371, 40074","rising_threshold":"40074","falling_threshold":"6371","initial_edge":"","x":540,"y":680,"wires":[["8da8954f.ea0048"]]},{"id":"739452a2.d7049c","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"384400","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":200,"y":760,"wires":[["5845ed17.5d48cc"]]},{"id":"a9a751c.66373b","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"2.54","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":640,"wires":[["5845ed17.5d48cc"]]},{"id":"43cf5f4c.7f0b88","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"30.48","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":680,"wires":[["5845ed17.5d48cc"]]},{"id":"75687242.c02a5c","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"-11034","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":600,"wires":[["5845ed17.5d48cc"]]},{"id":"7b62e0da.5a45b8","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"8848","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":720,"wires":[["5845ed17.5d48cc"]]},{"id":"8da8954f.ea0048","type":"debug","z":"38d130a0.78811","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","x":840,"y":680,"wires":[]}]```  
 **Fig. 10:** `hysteresis` node example flow
+
+#### Example 2 property `msg.edge` output
+An output of the nodes `msg.edge` property is shown in the following figure. When going below the lower hysteresis value (6371 in this example), the output shows:  
+<img src="assets/hysteresis-edge-property.png" title="Hysteresis node property msg.edge" width="250" />
+
+**Fig. 11:** `hysteresis`  node `msg.edge` property
+
+
