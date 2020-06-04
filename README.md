@@ -68,7 +68,7 @@ The difference between the two threshold values is called *hysteresis band*.
 **Fig. 5:** `hysteresis` incoming and outgoing messages 
 
 
-The `hysteresis` node is useful in situations where it would not be desirable to toggle an output repeatedly on and off if a value hovers around a single threshold (e.g. caused by noise). For example, a light that us activated by a luminosity sensor: It may be appropriate to turn the light on when the sensor indicates less than 30 lux, but not to turn it off again until the sensor indicates more than 40 lux.
+The `hysteresis` node is useful in situations where it would not be desirable to toggle an output repeatedly on and off if a value hovers around a single threshold (e.g. caused by noise). For example, a light that is activated by a luminosity sensor: It may be appropriate to turn the light on when the sensor indicates less than 30 lux, but not to turn it off again until the sensor indicates more than 40 lux.
 
 
 <a name="examples"></a>

@@ -1,6 +1,6 @@
 {
     "name": "node-red-contrib-edge-trigger",
-    "version": "0.1.5",
+    "version": "0.2.0",
     "author": "Paul Cunnane <paul.cunnane@gmail.com>",
     "description": "A set of nodes to trigger on rising or falling values",
     "repository": "eschava/node-red-contrib-edge-trigger",
