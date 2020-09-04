@@ -1,0 +1,79 @@
+----------------------------------------------------------------------------------------------------------
+
+v0.3.0
+(2020-09-03)
+
+Changes / Improvements / Optimisations:
+- Examples moved to subdir. Examples can then be added in Node-RED via <burger menue>/Import/Examples.
+
+Bug Fixes:
+- None.
+
+Known/Outstanding Issues:
+- None.
+
+For all additional issues that may appear after release, please see the following link for active tickets:
+    https://github.com/eschava/node-red-contrib-hourglass/issues.
+---------------------------------------------------------------------------------------------------------
+
+v0.2.0
+(2020-07-04)
+
+Changes / Improvements / Optimisations:
+- Improved documentation.
+
+Bug Fixes:
+- None.
+
+Known/Outstanding Issues:
+- None.
+
+----------------------------------------------------------------------------------------------------------
+
+v0.1.5
+(2018-04-12)
+
+Changes / Improvements / Optimisations:
+- None.
+
+Bug Fixes:
+- Fixed syntax error.
+
+Known/Outstanding Issues:
+- None.
+
+----------------------------------------------------------------------------------------------------------
+
+v0.1.4
+(2018-04-12)
+
+Changes / Improvements / Optimisations:
+- Option for hysteresis to trigger message on first value if threshold is reached.
+
+Bug Fixes:
+- None.
+
+Known/Outstanding Issues:
+- None.
+
+----------------------------------------------------------------------------------------------------------
+
+v0.1.3
+(2017-11-20)
+
+Changes / Improvements / Optimisations:
+- Repository updated to eschava/node-red-contrib-edge-trigger.
+
+Bug Fixes:
+- None.
+
+Known/Outstanding Issues:
+- None.
+
+----------------------------------------------------------------------------------------------------------
+
+v0.1.2
+(2017-10-20)
+
+Initial takeover from paulcunnane.
+----------------------------------------------------------------------------------------------------------
