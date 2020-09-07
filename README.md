@@ -81,11 +81,20 @@ The `hysteresis` node is useful in situations where it would not be desirable to
 ### Example 1: Rising and falling edge nodes
 
 This example shows the behaviour of the `rising edge`and `falling edge` nodes. You can click on the inject nodes to see which values are forwarded and displayed at the debug nodes crossing the different threshold levels.  
+
 <img src="assets/flow-rising-falling.png" title="Rising edge and falling edge example" width="600" />
 
-[**RisingEdgeFallingEdgeFlow.json**](examples/RisingEdgeFallingEdgeFlow.json)  
-
 **Fig. 6:** `rising edge` and `falling edge` example
+
+<details>
+  <summary>Click to expand code snippet for the <em><b>example flow</b></em>.</summary>
+
+```javascript
+[{"id":"aaa7c9a9.503a78","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"1","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":180,"wires":[["f3592261.3ae32","7a546816.767b3"]]},{"id":"f3592261.3ae32","type":"rising-edge","z":"38d130a0.78811","name":"rising, threshold = 42","threshold":"42","x":530,"y":180,"wires":[["cce1f276.6a31e8"]]},{"id":"7a546816.767b3","type":"falling-edge","z":"38d130a0.78811","name":"falling, threshold = 2.7183","threshold":"2.7183","x":550,"y":260,"wires":[["db277fe1.16bd08"]]},{"id":"18ce530e.6cf78d","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"6.023e23","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":200,"y":300,"wires":[["f3592261.3ae32","7a546816.767b3"]]},{"id":"dc0d676f.c3f468","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"-3.14159","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":200,"y":100,"wires":[["f3592261.3ae32","7a546816.767b3"]]},{"id":"a55450a8.4436d","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"9.81","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":220,"wires":[["f3592261.3ae32","7a546816.767b3"]]},{"id":"5fca1810.25af88","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"360","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":260,"wires":[["f3592261.3ae32","7a546816.767b3"]]},{"id":"d43d7bf4.8d68","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"1.602e-19","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":210,"y":140,"wires":[["f3592261.3ae32","7a546816.767b3"]]},{"id":"369bc84.86b3ab8","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"12 Monkeys","payloadType":"str","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":210,"y":360,"wires":[["f3592261.3ae32","7a546816.767b3"]]},{"id":"cce1f276.6a31e8","type":"debug","z":"38d130a0.78811","name":"","active":true,"tosidebar":false,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","x":840,"y":180,"wires":[]},{"id":"db277fe1.16bd08","type":"debug","z":"38d130a0.78811","name":"","active":true,"tosidebar":false,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","x":840,"y":260,"wires":[]},{"id":"f9f5884.e631978","type":"comment","z":"38d130a0.78811","name":"A string leads to no change","info":"","x":270,"y":400,"wires":[]}]
+```
+</details>
+
+
 
 
 <a name="hysteresis_example2"></a>
@@ -93,11 +102,19 @@ This example shows the behaviour of the `rising edge`and `falling edge` nodes. Y
 
 This example shows the behaviour of the `hysteresis` node.
 The example flow looks like this:  
+
 <img src="assets/flow-hysteresis.png" title="Hysteresis node example" width="600" />
 
-[**HysteresisFlow.json**](examples/HysteresisFlow.json)  
-
 **Fig. 7:** `hysteresis` node example
+
+<details>
+  <summary>Click to expand code snippet for the <em><b>example flow</b></em>.</summary>
+
+```javascript
+[{"id":"5845ed17.5d48cc","type":"hysteresis","z":"38d130a0.78811","name":"hysteresis, 6371, 40074","rising_threshold":"40074","falling_threshold":"6371","initial_edge":"","x":540,"y":680,"wires":[["8da8954f.ea0048"]]},{"id":"739452a2.d7049c","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"384400","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":200,"y":760,"wires":[["5845ed17.5d48cc"]]},{"id":"a9a751c.66373b","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"2.54","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":640,"wires":[["5845ed17.5d48cc"]]},{"id":"43cf5f4c.7f0b88","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"30.48","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":680,"wires":[["5845ed17.5d48cc"]]},{"id":"75687242.c02a5c","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"-11034","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":600,"wires":[["5845ed17.5d48cc"]]},{"id":"7b62e0da.5a45b8","type":"inject","z":"38d130a0.78811","name":"","topic":"","payload":"8848","payloadType":"num","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":190,"y":720,"wires":[["5845ed17.5d48cc"]]},{"id":"8da8954f.ea0048","type":"debug","z":"38d130a0.78811","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","x":840,"y":680,"wires":[]}]
+```
+</details>
+
 
 #### Example 2 node configuration
 The two hysteresis values are 6371 and 40074. The node configuration is shown in the following figure.  
