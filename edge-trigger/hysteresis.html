@@ -3,7 +3,7 @@
         category: 'function',
         color: '#E2D96E',
         defaults: {
-            name: {value: ""},
+            name: { value: "" },
             rising_threshold: {
                 value: "",
                 required: true,
@@ -14,12 +14,12 @@
                 required: true,
                 validate: RED.validators.number()
             },
-            initial_edge: {value: ""},
+            initial_edge: { value: "" },
         },
-        inputs: 1,
+        inputs: 2,
         outputs: 1,
         icon: "hysteresis.png",
-        label: function() {
+        label: function () {
             return this.name || "hysteresis";
         }
     });

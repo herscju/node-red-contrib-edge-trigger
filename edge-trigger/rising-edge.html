@@ -3,17 +3,17 @@
         category: 'function',
         color: '#E2D96E',
         defaults: {
-            name: {value: ""},
+            name: { value: "" },
             threshold: {
                 value: "",
                 required: true,
                 validate: RED.validators.number()
             }
         },
-        inputs: 1,
+        inputs: 2,
         outputs: 1,
         icon: "rising-edge.png",
-        label: function() {
+        label: function () {
             return this.name || "rising edge";
         },
         paletteLabel: "rising edge"
